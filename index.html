@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prova Técnica</title>
+    <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="icon" href="./assets/favicon.ico" />
+  </head>
+  <body onload="updateTable()">
+    <section id="content">
+      <header>
+        <section id="header-container">
+          <div>
+            <h1>Controle de Locais de Trabalho</h1>
+          </div>
+
+          <div id="users-comands">
+            <a href="#">
+              <img src="./assets/home.png" alt="Home" />
+            </a>
+            <span></span>
+            <a href="#">
+              <img src="./assets/user.png" alt="User" />
+            </a>
+
+            <div>
+              <h2>Usuário</h2>
+              <h3>Administrador</h3>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <nav>
+        <section id="nav-container">
+          <div>
+            <img src="./assets/engine.png" alt="engine" />
+            <h1>Administração</h1>
+          </div>
+
+          <div>
+            <ul>
+              <li>
+                <a href="#">Administradores</a>
+              </li>
+
+              <li>
+                <a href="#">Áreas</a>
+              </li>
+
+              <li>
+                <a href="#">Locais de Trabalho</a>
+              </li>
+
+              <li>
+                <a href="#"> Habilidades</a>
+              </li>
+
+              <li>
+                <a href="#">Log</a>
+              </li>
+
+              <li>
+                <a href="#">Responsáveis</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </nav>
+
+      <main>
+        <section id="main-container">
+          <h1>Locais de Trabalho</h1>
+          <div id="table-action">
+            <div id="item-action">
+              <div>
+                <h2>Prédio</h2>
+                <select name="edifice" id="edifice">
+                  <option value="Prédio 1">Prédio 1</option>
+                  <option value="Prédio 2">Prédio 2</option>
+                  <option value="Prédio 3">Prédio 3</option>
+                  <option value="Prédio 4">Prédio 4</option>
+                  <option value="Prédio 5">Prédio 5</option>
+                </select>
+              </div>
+
+              <div>
+                <h2>Local de Trabalho</h2>
+                <input
+                  type="text"
+                  placeholder="Adicione um local"
+                  id="textEdifice"
+                />
+              </div>
+
+              <button onclick="addItem()">+</button>
+            </div>
+
+            <table id="tableList">
+              <th>Prédio</th>
+              <th>Local de Trabalho</th>
+              <th></th>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <section id="modalTable" class="modal">
+        <div>
+          <h1>
+            O campo "Local de Trabalho" <br />
+            não pode estar vazio.
+          </h1>
+          <button onclick="removeAndAddModal()">Voltar</button>
+        </div>
+      </section>
+
+      <section id="modalEditTable" class="modal2">
+        <div>
+          <div>
+            <h2>Prédio</h2>
+            <select name="edifice2" id="edifice2">
+              <option value="Prédio 1">Prédio 1</option>
+              <option value="Prédio 2">Prédio 2</option>
+              <option value="Prédio 3">Prédio 3</option>
+              <option value="Prédio 4">Prédio 4</option>
+              <option value="Prédio 5">Prédio 5</option>
+            </select>
+          </div>
+
+          <div>
+            <h2>Local de Trabalho</h2>
+            <input
+              type="text"
+              placeholder="Adicione um local"
+              id="textEdificeEdit"
+            />
+            <p id="areaNone"></p>
+          </div>
+
+          <button id="saveEdit">Salvar</button>
+          <button onclick="removeAndAddModal2()">Voltar</button>
+        </div>
+      </section>
+
+      <section id="modalTableDelete" class="modal">
+        <div>
+          <img src="./assets/alert.png" alt="ALERTA" />
+          <h1>Tem certeza que quer deletar?</h1>
+          <div>
+            <button onclick="removeAndAddModal3()">Cancelar</button>
+            <button id="checkDelete">Sim, desejo apagar!</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
